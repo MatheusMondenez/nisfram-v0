@@ -1,7 +1,8 @@
 # NISFRAM
 Sistema de Gerenciamento Pedagógico - NISFRAM
 
-* **Framework:** Laravel
+* **Framework:** Laravel 5.4
+* **Template:** SB Admin
 
 ## Módulos
 * Alunos
