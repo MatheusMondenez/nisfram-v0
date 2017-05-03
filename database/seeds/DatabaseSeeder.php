@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+         $this->call(UserTableSeeder::class);
+//        App\User::create([
+//            'name' => 'Matheus Mondenez',
+//            'email' => 'matheusmondenez@gmail.com',
+//            'password' => bcrypt('suporte')
+//        ]);
     }
 }
