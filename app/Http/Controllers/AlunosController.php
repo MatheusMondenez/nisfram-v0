@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Aluno;
 
 class AlunosController extends Controller
 {
@@ -11,12 +12,13 @@ class AlunosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Aluno $aluno)
     {
         $title = 'Alunos';
         $teste = 'Alunos';
+        $alunos = $aluno->all();
 //        return view('alunos.index', ['teste' => $teste]);
-        return view('alunos.index', compact('title', 'teste'));
+        return view('alunos.index', compact('title', 'teste', 'alunos'));
     }
 
     /**

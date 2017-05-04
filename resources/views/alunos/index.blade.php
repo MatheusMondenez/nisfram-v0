@@ -105,11 +105,41 @@
                         <div id="donutSexo" style="height: 200px;"></div>
                     </div>
             </div>
-        </div>
+        </div>--}}
 
     </div>
-    <!-- /.row -->--}}
+    <!-- /.row -->
     
-    
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            
+            @if(count($alunos) > 0)
+                <table class='table table-striped'>
+                    <thead>
+                        <tr>
+                            <th>NIS</th>
+                            <th>Nome</th>
+                            <th class='text-right'>Idade</th>
+                            <th class='text-center'></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($alunos as $aluno)
+                            <tr>
+                                <td>{{$aluno['NM_NIS_ALU']}}</td>
+                                <td>{{$aluno['ST_NOME_ALU']}}</td>
+                                <td>Teste</td>
+                                <td>Ações</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+            <div class="alert alert-warning" role="alert"><i class="fa fa-frown-o"></i> Nenhum aluno cadastrado</div>
+            @endif
+            
+        </div>
+    </div>
+    <!-- /.row  -->
 
 @endsection
