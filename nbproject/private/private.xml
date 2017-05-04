@@ -5,9 +5,11 @@
         <group>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/admin.blade.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Http/Controllers/AlunosController.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/index/index.blade.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/routes/web.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/includes/navigation.blade.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/index.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Http/Controllers/IndexController.php</file>
         </group>
     </open-files>
 </project-private>
