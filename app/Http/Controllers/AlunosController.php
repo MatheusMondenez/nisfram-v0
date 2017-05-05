@@ -39,7 +39,17 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $params = $request->except('_token');
+        
+        $params['DT_NASCIMENTO_ALU'] = '1993/11/01';
+        
+        $aluno = new Aluno();
+        $result = $aluno->insert($params);
+        
+        if($result)
+            return 'Sucesso';
+        else
+            return 'Falha';
     }
 
     /**

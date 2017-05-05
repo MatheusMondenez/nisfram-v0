@@ -24,7 +24,6 @@ Route::group([/*'middleware' => 'auth'*/], function(){
         return 'Login';
     });
     Route::get('/', 'IndexController@index');
-    Route::get('/alunos', 'AlunosController@index');
-    Route::get('/professores', 'ProfessoresController@index');
-    Route::get('/turmas', 'TurmasController@index');
 });
+
+Route::resource('/alunos', 'AlunosController');
