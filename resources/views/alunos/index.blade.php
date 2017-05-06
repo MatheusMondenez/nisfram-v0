@@ -130,8 +130,8 @@
                                 <td>{{$aluno['ST_NOME_ALU']}}</td>
                                 <td class="text-right">Teste</td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAluno">Editar</button>
                                     {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
+                                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAluno">Editar</button>
                                         {!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
                                 </td>
@@ -146,6 +146,12 @@
         </div>
     </div>
     <!-- /.row  -->
+    
+    <div class="row">
+        <div class="col-lg-12 col-md-21">
+            {!! $alunos->links() !!}
+        </div>
+    </div>
     
     <div class="row">
         <div class="col-lg-12 col-md-12">
@@ -190,8 +196,12 @@
                 </div>
                 <div class="modal-body">
 
+                <!--@if(isset($alunos))
+                {!! Form::model($alunos, ['route' => ['alunos.update', $aluno['ID_ALUNO_ALU']], 'class' => 'form', 'method' => 'put']) !!}
+                @else-->
                 {!! Form::open(['route' => 'alunos.store', 'class' => 'form']) !!}
-                    
+                <!--@endif-->
+
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label for="nome" class="control-label">Nome:</label>

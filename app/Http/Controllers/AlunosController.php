@@ -16,7 +16,8 @@ class AlunosController extends Controller
     {
         $title = 'Alunos';
         $teste = 'Alunos';
-        $alunos = $aluno->all();
+//        $alunos = $aluno->all();
+        $alunos = $aluno->paginate(50);
 //        return view('alunos.index', ['teste' => $teste]);
         return view('alunos.index', compact('title', 'teste', 'alunos'));
     }
@@ -39,12 +40,12 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
-        $params = $request->except('_token');
+        $params = $request->all();
         
-        $params['DT_NASCIMENTO_ALU'] = '1993/11/01';
+        $params['DT_NASCIMENTO_ALU'] = date('Y-m-d', strtotime($params['DT_NASCIMENTO_ALU']));
         
         $aluno = new Aluno();
-        $result = $aluno->insert($params);
+        $result = $aluno->create($params);
         
         if($result)
             return 'Sucesso';
@@ -95,7 +96,7 @@ class AlunosController extends Controller
     public function destroy($id)
     {
         $aluno = new Aluno();
-        
+//        dd($aluno);
         $result = $aluno->find($id)->delete();
         
         if($result)
