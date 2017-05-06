@@ -128,7 +128,7 @@
                             <tr>
                                 <td>{{$aluno['NM_NIS_ALU']}}</td>
                                 <td>{{$aluno['ST_NOME_ALU']}}</td>
-                                <td class="text-right">Teste</td>
+                                <td class="text-right">{{$aluno['IDADE']}}</td>
                                 <td class="text-center">
                                     {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
                                         <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>

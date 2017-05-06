@@ -18,6 +18,12 @@ class AlunosController extends Controller
         $teste = 'Alunos';
 //        $alunos = $aluno->all();
         $alunos = $aluno->paginate(50);
+        
+        foreach($alunos as $row){
+            $idade = $this->calcularIdade($row->DT_NASCIMENTO_ALU);
+            $row->IDADE = $idade;
+        }
+
 //        return view('alunos.index', ['teste' => $teste]);
         return view('alunos.index', compact('title', 'teste', 'alunos'));
     }
@@ -124,7 +130,7 @@ class AlunosController extends Controller
         $anos = $data[2] - $dataNasc[2];
 
         if($dataNasc[1] > $data[1]){
-            return $anos-1;
+            return $anos - 1;
         }
 
         if($dataNasc[1] == $data[1]){
@@ -132,7 +138,7 @@ class AlunosController extends Controller
                 return $anos;
             }
             else{
-                return $anos-1;
+                return $anos - 1;
             }
         }
 
