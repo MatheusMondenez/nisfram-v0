@@ -83,7 +83,7 @@ class AlunosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "Editando {$id}";
     }
 
     /**
@@ -94,6 +94,13 @@ class AlunosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aluno = new Aluno();
+        
+        $result = $aluno->find($id)->delete();
+        
+        if($result)
+            return 'Sucesso';
+        else
+            return 'Falha';
     }
 }

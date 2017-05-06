@@ -119,8 +119,8 @@
                         <tr>
                             <th>NIS</th>
                             <th>Nome</th>
-                            <th class='text-right'>Idade</th>
-                            <th class='text-center'></th>
+                            <th class="text-right">Idade</th>
+                            <th class="text-center"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -128,8 +128,13 @@
                             <tr>
                                 <td>{{$aluno['NM_NIS_ALU']}}</td>
                                 <td>{{$aluno['ST_NOME_ALU']}}</td>
-                                <td>Teste</td>
-                                <td>Ações</td>
+                                <td class="text-right">Teste</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAluno">Editar</button>
+                                    {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
+                                        {!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs']) !!}
+                                    {!! Form::close() !!}
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
