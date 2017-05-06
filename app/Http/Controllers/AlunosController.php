@@ -19,6 +19,13 @@ class AlunosController extends Controller
 //        $alunos = $aluno->all();
         $alunos = $aluno->paginate(50);
         
+        $totalAlunos = count($alunos);
+        
+//        $request = new Request();
+//        if($request->only('pesquisa')){
+//            dd($request);
+//        }
+        
         foreach($alunos as $row){
             $idade = $this->calcularIdade($row->DT_NASCIMENTO_ALU);
             $row->IDADE = $idade;
@@ -129,21 +136,17 @@ class AlunosController extends Controller
         $data = explode('/',$data);
         $anos = $data[2] - $dataNasc[2];
 
-        if($dataNasc[1] > $data[1]){
+        if($dataNasc[1] > $data[1])
             return $anos - 1;
-        }
 
         if($dataNasc[1] == $data[1]){
-            if($dataNasc[0] <= $data[0]) {
+            if($dataNasc[0] <= $data[0])
                 return $anos;
-            }
-            else{
+            else
                 return $anos - 1;
-            }
         }
 
-        if ($dataNasc[1] < $data[1]){
+        if ($dataNasc[1] < $data[1])
             return $anos;
-        }
     }
 }

@@ -114,20 +114,20 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li class="active">
+                <li @if($title == 'Dashboard') class="active" @endif>
                     <a href="{{url('/')}}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
-                <li>
+                <li @if($title == 'Alunos') class="active" @endif>
                     <a href="{{url('/alunos')}}"><i class="fa fa-fw fa-user"></i> Alunos</a>
                 </li>
-                <li>
+                <li @if($title == 'Professores') class="active" @endif>
                     <a href="{{url('/professores')}}"><i class="fa fa-fw fa-graduation-cap"></i> Professores</a>
                 </li>
-                <li>
+                <li @if($title == 'Turmas') class="active" @endif>
                     <a href="{{url('/turmas')}}"><i class="fa fa-fw fa-users"></i> Turmas</a>
                 </li>
-                <li>
-                    <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                <li @if($title == 'Chamadas') class="active" @endif>
+                    <a href="{{url('/chamadas')}}"><i class="fa fa-fw fa-calendar"></i> Chamadas</a>
                 </li>
                 <li>
                     <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
