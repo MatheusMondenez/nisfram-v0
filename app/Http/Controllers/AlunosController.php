@@ -84,7 +84,17 @@ class AlunosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "Editando {$id}";
+        $aluno = new Aluno();
+        $params = $request->all();
+        
+        $params['DT_NASCIMENTO_ALU'] = date('Y-m-d', strtotime($params['DT_NASCIMENTO_ALU']));
+
+        $result = $aluno->find($id)->update($params);
+        
+        if($result)
+            return 'Sucesso';
+        else
+            return 'Falha';
     }
 
     /**
@@ -96,12 +106,38 @@ class AlunosController extends Controller
     public function destroy($id)
     {
         $aluno = new Aluno();
-//        dd($aluno);
+
         $result = $aluno->find($id)->delete();
         
         if($result)
             return 'Sucesso';
         else
             return 'Falha';
+    }
+    
+    private function calcularIdade($dataNasc)
+    {
+        $dataNasc = date('d/m/Y', strtotime($dataNasc));
+        $dataNasc = explode('/',$dataNasc);
+        $data = date('d/m/Y');
+        $data = explode('/',$data);
+        $anos = $data[2] - $dataNasc[2];
+
+        if($dataNasc[1] > $data[1]){
+            return $anos-1;
+        }
+
+        if($dataNasc[1] == $data[1]){
+            if($dataNasc[0] <= $data[0]) {
+                return $anos;
+            }
+            else{
+                return $anos-1;
+            }
+        }
+
+        if ($dataNasc[1] < $data[1]){
+            return $anos;
+        }
     }
 }
