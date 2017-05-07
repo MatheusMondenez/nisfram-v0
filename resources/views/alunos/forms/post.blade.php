@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="data-nasc" class="control-label">Data de Nascimento:</label>
-                            {!! Form::date('DT_NASCIMENTO_ALU', null, ['class' => 'form-control']) !!}
+                            {!! Form::date('DT_NASCIMENTO_ALU', null, ['class' => 'form-control', 'id' => 'datepicker']) !!}
                         </div>
                         <div class="form-group col-md-4">
                           <label for="status" class="control-label">Sexo:</label>
