@@ -5,12 +5,8 @@
         <group>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Models/Aluno.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/admin.blade.php</file>
-            <file>file:/C:/vagrant-setup-php/www/html/nisfram/database/migrations/2017_05_03_222608_create_alunos_table.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Http/Controllers/AlunosController.php</file>
-            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/forms/post.blade.php</file>
-            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/forms/put.blade.php</file>
-            <file>file:/C:/vagrant-setup-php/www/html/nisfram/config/app.php</file>
-            <file>file:/C:/vagrant-setup-php/www/html/nisfram/routes/web.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/includes/navigation.blade.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/index.blade.php</file>
         </group>
     </open-files>
