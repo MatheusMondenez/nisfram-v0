@@ -19,7 +19,7 @@
     
     <div class="row">
         <div class="col-lg-8">
-            <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Novo Aluno</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAluno"><i class="fa fa-plus"></i> Novo Aluno</button>
         </div>
         <div class="col-lg-4">
             <form action="" method="GET">
@@ -36,6 +36,7 @@
     <!-- /.row -->
     
     <div class="row">
+        
         <div class="col-md-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -45,7 +46,7 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">
-                                0
+                                {{count($alunos)}}
                             </div>
                             <div>Alunos Cadastrados</div>
                         </div>
@@ -60,6 +61,7 @@
                 </a>
             </div>
         </div>
+        
         <div class="col-md-3">
             <div class="panel panel-yellow">
                 <div class="panel-heading">
@@ -72,6 +74,56 @@
                                 0
                             </div>
                             <div>Alunos sem Turma</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">Ver detalhes</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-male fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">
+                                0
+                            </div>
+                            <div>Meninos</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">Ver detalhes</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-female fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">
+                                0
+                            </div>
+                            <div>Meninas</div>
                         </div>
                     </div>
                 </div>
@@ -105,11 +157,89 @@
                         <div id="donutSexo" style="height: 200px;"></div>
                     </div>
             </div>
-        </div>
+        </div>--}}
 
     </div>
-    <!-- /.row -->--}}
+    <!-- /.row -->
     
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            
+            @if(count($alunos) > 0)
+                <table class='table table-striped'>
+                    <thead>
+                        <tr>
+                            <th>NIS</th>
+                            <th>Nome</th>
+                            <th class="text-right">Idade</th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($alunos as $aluno)
+                            <tr>
+                                <td>{{$aluno['NM_NIS_ALU']}}</td>
+                                <td>{{$aluno['ST_NOME_ALU']}}</td>
+                                <td class="text-right">{{$aluno['IDADE']}}</td>
+                                <td class="text-center">
+                                    {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
+                                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>
+                                        {!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs']) !!}
+                                    {!! Form::close() !!}
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+            <div class="alert alert-warning" role="alert"><i class="fa fa-frown-o"></i> Nenhum aluno cadastrado</div>
+            @endif
+            
+        </div>
+    </div>
+    <!-- /.row  -->
     
+    <div class="row">
+        <div class="col-lg-12 col-md-21">
+            {!! $alunos->links() !!}
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-print"></i> Relatórios <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Todos Alunos</a></li>
+                    <li><a href="#">Alunos por Turma</a></li>
+                    <li><a href="#">Alunos Ativos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-file-excel-o"></i> Planilhas <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Todos Alunos</a></li>
+                    <li><a href="#">Alunos por Turma</a></li>
+                    <li><a href="#">Alunos Ativos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <!-- /.row  -->
+    
+    <!-- Modal -->
+    @include('alunos.forms.post')
+    @include('alunos.forms.put')
 
 @endsection
