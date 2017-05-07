@@ -192,7 +192,7 @@
                     </tbody>
                 </table>
             @else
-            <div class="alert alert-warning" role="alert"><i class="fa fa-frown-o"></i> Nenhum aluno cadastrado</div>
+                <div class="alert alert-warning" role="alert"><i class="fa fa-frown-o"></i> Nenhum aluno cadastrado</div>
             @endif
             
         </div>
