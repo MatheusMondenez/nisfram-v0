@@ -183,8 +183,8 @@
                                 <td class="text-right">{{$aluno['IDADE']}}</td>
                                 <td class="text-center">
                                     {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
-                                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>
-                                        {!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs']) !!}
+                                        <button type="button" class="btn btn-warning btn-xs esconder-acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>
+                                        {!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs esconder-acao']) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>

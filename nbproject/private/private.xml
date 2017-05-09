@@ -3,11 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Models/Aluno.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/admin.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Models/Aluno.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Http/Controllers/AlunosController.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/includes/navigation.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Models/Professor.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/professores/forms/post.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/database/migrations/2017_05_06_132326_create_professores_table.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/professores/forms/put.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/forms/post.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/forms/put.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/index/index.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/professores/index.blade.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/index.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Http/Controllers/ProfessoresController.php</file>
         </group>
     </open-files>
 </project-private>
