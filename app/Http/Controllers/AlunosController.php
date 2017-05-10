@@ -61,7 +61,8 @@ class AlunosController extends Controller
         $result = $aluno->create($params);
         
         if($result)
-            return 'Sucesso';
+//            return 'Sucesso';
+            return redirect()->back();
         else
             return 'Falha';
     }
@@ -123,7 +124,8 @@ class AlunosController extends Controller
         $result = $aluno->find($id)->delete();
         
         if($result)
-            return 'Sucesso';
+//            return 'Sucesso';
+            return redirect()->back();
         else
             return 'Falha';
     }
