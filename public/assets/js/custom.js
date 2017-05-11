@@ -23,7 +23,19 @@ $(document).ready(function(){
             cancelButtonText: "Cancelar",
             closeOnConfirm: false
         }, function(){
-            swal("Excluído!", "O cadastro do aluno foi excluído com sucesso.", "success");
+            $.ajax({
+                url: "/alunos/destroy",
+                type: "POST",
+                data: {
+                    ID_ALUNO_ALU: 8
+                },
+                dataType: "html",
+                success:function(){
+                    swal("Excluído!", "O aluno foi removido com sucesso.", "success");
+                }, error: function(){
+                    swal("Erro!", "Não foi possível remover o aluno.", "error");
+                }
+            });
         });
     });
     
