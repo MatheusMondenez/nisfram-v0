@@ -13,6 +13,8 @@ $(document).ready(function(){
     var btnExcluir = $('.btn-danger');
     btnExcluir.click(function(event){
         event.preventDefault();
+        var token = $(this).data("token");
+        var id = $(this).data("id");
         swal({
             title: "Deseja continuar?",
             text: "O cadastro do aluno será excluído permanentemente!",
@@ -24,12 +26,14 @@ $(document).ready(function(){
             closeOnConfirm: false
         }, function(){
             $.ajax({
-                url: "/alunos/destroy",
-                type: "POST",
+                url: "/alunos/"+id,
+                type: "DELETE",
                 data: {
-                    ID_ALUNO_ALU: 8
+//                    _method: 'delete',
+                    _token: token
+//                    ID_ALUNO_ALU: id
                 },
-                dataType: "html",
+                dataType: "json",
                 success:function(){
                     swal("Excluído!", "O aluno foi removido com sucesso.", "success");
                 }, error: function(){

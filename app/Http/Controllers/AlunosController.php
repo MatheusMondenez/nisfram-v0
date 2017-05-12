@@ -123,11 +123,17 @@ class AlunosController extends Controller
 
         $result = $aluno->find($id)->delete();
         
-        if($result)
-//            return 'Sucesso';
-            return redirect()->back();
-        else
-            return 'Falha';
+        if($result){
+            return response(['success' => true]);
+        }
+        
+//        if(request()->expectsJson())
+//            return $result->toJson();
+        
+//        if($result)
+//            return response()->json(['success', true]);
+//        else
+//            return response()->json(['error', true]);
     }
     
     private function calcularIdade($dataNasc)

@@ -182,10 +182,11 @@
                                 <td>{{$aluno['ST_NOME_ALU']}}</td>
                                 <td class="text-right">{{$aluno['IDADE']}}</td>
                                 <td class="text-center">
-                                    {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
+<!--                                    {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
                                         <button type="button" class="btn btn-warning btn-xs esconder-acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>
                                         {!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs esconder-acao']) !!}
-                                    {!! Form::close() !!}
+                                    {!! Form::close() !!}-->
+<a class="btn btn-danger btn-xs" data-token="{{csrf_token()}}" data-id="{{$aluno['ID_ALUNO_ALU']}}">Excluir</a>
                                 </td>
                             </tr>
                         @endforeach
