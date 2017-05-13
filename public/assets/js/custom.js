@@ -54,4 +54,14 @@ $(document).ready(function(){
 //    }, function(){
 //        swal("Excluído!", "O cadastro do aluno foi deletado com sucesso.", "success");
 //    });
+
+    $('#gridAlunos').DataTable({
+        "language": {
+            "lengthMenu": "Exibindo _MENU_ registros por página",
+            "zeroRecords": "Nenhum registro encontrado",
+            "info": "Exibindo página _PAGE_ de _PAGES_",
+            "infoEmpty": "Sem registros disponíveis",
+            "infoFiltered": "(Filtrado de _MAX_ registros totais)"
+        }
+    });
  });

@@ -166,7 +166,7 @@
         <div class="col-lg-12 col-md-12">
             
             @if(count($alunos) > 0)
-                <table class='table table-striped'>
+                <table class="table table-striped" id="gridAlunos">
                     <thead>
                         <tr>
                             <th>NIS</th>
@@ -182,10 +182,10 @@
                                 <td>{{$aluno['ST_NOME_ALU']}}</td>
                                 <td class="text-right">{{$aluno['IDADE']}}</td>
                                 <td class="text-center">
-<!--                                    {!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}
+                                    <!--{!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}-->
                                         <button type="button" class="btn btn-warning btn-xs esconder-acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>
-                                        {!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs esconder-acao']) !!}
-                                    {!! Form::close() !!}-->
+                                        <!--{!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs esconder-acao']) !!}-->
+                                    <!--{!! Form::close() !!}-->
 <a class="btn btn-danger btn-xs" data-token="{{csrf_token()}}" data-id="{{$aluno['ID_ALUNO_ALU']}}">Excluir</a>
                                 </td>
                             </tr>

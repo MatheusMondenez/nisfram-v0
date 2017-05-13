@@ -106,7 +106,7 @@ class AlunosController extends Controller
         $result = $aluno->find($id)->update($params);
         
         if($result)
-            return 'Sucesso';
+            return redirect()->back();
         else
             return 'Falha';
     }
