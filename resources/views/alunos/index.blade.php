@@ -172,7 +172,7 @@
                             <th>NIS</th>
                             <th>Nome</th>
                             <th class="text-right">Idade</th>
-                            <th class="text-center"></th>
+                            <th class="text-center cabecalho-acao"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -183,10 +183,11 @@
                                 <td class="text-right">{{$aluno['IDADE']}}</td>
                                 <td class="text-center">
                                     <!--{!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}-->
-                                        <button type="button" class="btn btn-warning btn-xs esconder-acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>
+                                        <!--<button type="button" class="btn btn-warning btn-xs esconder-acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>-->
                                         <!--{!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs esconder-acao']) !!}-->
                                     <!--{!! Form::close() !!}-->
-<a class="btn btn-danger btn-xs" data-token="{{csrf_token()}}" data-id="{{$aluno['ID_ALUNO_ALU']}}">Excluir</a>
+                                    <a class="btn btn-primary btn-xs acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}"><i class="fa fa-edit"></i> Editar</a>
+                                    <a class="btn btn-danger btn-xs acao" data-token="{{csrf_token()}}" data-id="{{$aluno['ID_ALUNO_ALU']}}"><i class="fa fa-times"></i> Excluir</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -200,11 +201,11 @@
     </div>
     <!-- /.row  -->
     
-    <div class="row">
+    {{--<div class="row">
         <div class="col-lg-12 col-md-21">
             {!! $alunos->links() !!}
         </div>
-    </div>
+    </div>--}}
     
     <div class="row">
         <div class="col-lg-12 col-md-12">

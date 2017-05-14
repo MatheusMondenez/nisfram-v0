@@ -16,8 +16,8 @@ class AlunosController extends Controller
     {
         $title = 'Alunos';
         $teste = 'Alunos';
-//        $alunos = $aluno->all();
-        $alunos = $aluno->paginate(50);
+        $alunos = $aluno->all();
+//        $alunos = $aluno->paginate(50);
         
         $totalAlunos = count($alunos);
         
