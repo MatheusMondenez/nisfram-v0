@@ -39,7 +39,11 @@
                     <hr>
                     
                     <div class="row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-3">
+                            <label for="endereco" class="control-label">CEP:</label>
+                            {!! Form::text('NM_CEP_ALU', null, ['class' => 'form-control cep']) !!}
+                        </div>
+                        <div class="form-group col-md-9">
                             <label for="endereco" class="control-label">Endereço:</label>
                             {!! Form::text('ST_ENDERECO_ALU', null, ['class' => 'form-control']) !!}
                         </div>

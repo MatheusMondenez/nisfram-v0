@@ -6,7 +6,14 @@
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Models/Aluno.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/admin.blade.php</file>
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/app/Http/Controllers/AlunosController.php</file>
+<<<<<<< Updated upstream
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/templates/includes/navigation.blade.php</file>
+=======
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/forms/put.blade.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/public/assets/bootstrap/css/bootstrap.css</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/routes/web.php</file>
+            <file>file:/C:/vagrant-setup-php/www/html/nisfram/public/assets/js/custom.js</file>
+>>>>>>> Stashed changes
             <file>file:/C:/vagrant-setup-php/www/html/nisfram/resources/views/alunos/index.blade.php</file>
         </group>
     </open-files>
