@@ -31,8 +31,10 @@
                             {!! Form::date('DT_NASCIMENTO_ALU', null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group col-md-4">
-                          <label for="status" class="control-label">Sexo:</label>
-                          
+                            <label for="status" class="control-label">Sexo:</label>
+                            <br>
+                            {!! Form::radio('FL_SEXO_ALU', '0') !!} M
+                            {!! Form::radio('FL_SEXO_ALU', '1') !!} F
                         </div>
                     </div>
                     
@@ -60,6 +62,16 @@
                         <div class="form-group col-md-4">
                             <label for="tel" class="control-label">Telefone:</label>
                             {!! Form::text('NM_TELEFONE_ALU', null, ['class' => 'form-control']) !!}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="numero" class="control-label">Cidade:</label>
+                            {!! Form::text('ST_CIDADE_ALU', null, ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="numero" class="control-label">Estado:</label>
+                            {!! Form::text('ST_UF_ALU', null, ['class' => 'form-control']) !!}
                         </div>
                     </div>
                     
