@@ -1,10 +1,9 @@
 $(document).ready(function(){
-    
+    alert('uhu');
     var campoCEP = $('#campoCep');
 //    var campoCEP = $('input[type=text][name=NM_CEP_ALU]');
     campoCEP.blur(function(){
-        var cep = campoCEP.val();
-        
+        var cep = campoCEP.val();        
         $.ajax({
             url: 'http://correiosapi.apphb.com/cep/'+cep,
             dataType: 'jsonp',

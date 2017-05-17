@@ -10,7 +10,7 @@ $(document).ready(function(){
 //        botoes.hide();
 //    });
 
-    var btnExcluir = $('.btn-danger');
+    var btnExcluir = $('#btnExcluirAluno');
     btnExcluir.click(function(event){
         event.preventDefault();
         var token = $(this).data("token");
@@ -43,25 +43,37 @@ $(document).ready(function(){
         });
     });
     
-//    swal({
-//        title: "Deseja continuar?",
-//        text: "O cadastro do aluno será excluído permanentemente!",
-//        type: "warning",
-//        showCancelButton: true,
-//        confirmButtonColor: "#DD6B55",
-//        confirmButtonText: "Sim, excluir!",
-//        closeOnConfirm: false
-//    }, function(){
-//        swal("Excluído!", "O cadastro do aluno foi deletado com sucesso.", "success");
-//    });
-
-    $('#gridAlunos').DataTable({
-        "language": {
-            "lengthMenu": "Exibindo _MENU_ registros por página",
-            "zeroRecords": "Nenhum registro encontrado",
-            "info": "Exibindo página _PAGE_ de _PAGES_",
-            "infoEmpty": "Sem registros disponíveis",
-            "infoFiltered": "(Filtrado de _MAX_ registros totais)"
-        }
+    var btnSalvar = $('#btnSalvarAluno');
+    btnSalvar.click(function(event){
+//        $.ajaxSetup({
+//            header: $('meta[name="_token"]').attr('content')
+//        });
+        event.preventDefault();
+        var token = $(this).data("token");
+        $.ajax({
+            url: "alunos",
+            type: "POST",
+            data: {
+                _token: token,
+                ST_NOME_ALU: "TESTE AJAX",
+                NM_NIS_ALU: 4
+            },
+            dataType: "json",
+            success:function(){
+                    swal("Cadastado!", "O aluno foi cadastrado com sucesso.", "success");
+                }, error: function(){
+                    swal("Erro!", "Não foi possível cadastrar o aluno.", "error");
+                }
+        });
     });
+
+//    $('#gridAlunos').DataTable({
+//        "language": {
+//            "lengthMenu": "Exibindo _MENU_ registros por página",
+//            "zeroRecords": "Nenhum registro encontrado",
+//            "info": "Exibindo página _PAGE_ de _PAGES_",
+//            "infoEmpty": "Sem registros disponíveis",
+//            "infoFiltered": "(Filtrado de _MAX_ registros totais)"
+//        }
+//    });
  });

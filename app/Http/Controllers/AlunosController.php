@@ -60,11 +60,13 @@ class AlunosController extends Controller
         $aluno = new Aluno();
         $result = $aluno->create($params);
         
-        if($result)
-//            return 'Sucesso';
-            return redirect()->back();
-        else
-            return 'Falha';
+        return response()->json(['responseText' => 'Sucesso!'], 200);
+        
+//        if($result)
+////            return 'Sucesso';
+//            return redirect()->back();
+//        else
+//            return 'Falha';
     }
 
     /**
