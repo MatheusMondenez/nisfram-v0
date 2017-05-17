@@ -245,3 +245,7 @@
     @include('alunos.forms.put')
 
 @endsection
+
+@push('scripts')
+    <script src="{{url('js/library/cep.js')}}"></script>
+@endpush

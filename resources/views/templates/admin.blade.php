@@ -10,6 +10,7 @@
         <script src="{{url('assets/js/custom.js')}}"></script>      
         <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+        @stack('scripts')
 
         <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.css')}}">
         <!--<link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap-theme.min.css')}}"> Tema com degradêzinho-->
