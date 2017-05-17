@@ -30,20 +30,26 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="data-nasc" class="control-label">Data de Nascimento:</label>
-                            {!! Form::date('DT_NASCIMENTO_ALU', date('d/m/Y', strtotime($aluno['DT_NASCIMENTO_ALU'])), ['class' => 'form-control']) !!}
+                            {!! Form::text('DT_NASCIMENTO_ALU', date('d/m/Y', strtotime($aluno['DT_NASCIMENTO_ALU'])), ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group col-md-4">
                           <label for="status" class="control-label">Sexo:</label>
-                          
+                          <br>
+                            {!! Form::radio('FL_SEXO_ALU', '0') !!} M
+                            {!! Form::radio('FL_SEXO_ALU', '1') !!} F
                         </div>
                     </div>
                     
                     <hr>
                     
                     <div class="row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-3">
+                            <label for="endereco" class="control-label">CEP:</label>
+                            {!! Form::text('NM_CEP_ALU', null, ['class' => 'form-control cep', 'id' => 'campoCep']) !!}
+                        </div>
+                        <div class="form-group col-md-9">
                             <label for="endereco" class="control-label">Endereço:</label>
-                            {!! Form::text('ST_ENDERECO_ALU', $aluno['ST_ENDERECO_ALU'], ['class' => 'form-control']) !!}
+                            {!! Form::text('ST_ENDERECO_ALU', $aluno['ST_ENDERECO_ALU'], ['class' => 'form-control', 'id' => 'campoNumero']) !!}
                         </div>
                     </div>
                     <div class="row">
@@ -53,11 +59,21 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="bairro" class="control-label">Bairro:</label>
-                            {!! Form::text('ST_BAIRRO_ALU', $aluno['ST_BAIRRO_ALU'], ['class' => 'form-control']) !!}
+                            {!! Form::text('ST_BAIRRO_ALU', $aluno['ST_BAIRRO_ALU'], ['class' => 'form-control', 'id' => 'campoBairro']) !!}
                         </div>
                         <div class="form-group col-md-4">
                             <label for="tel" class="control-label">Telefone:</label>
                             {!! Form::text('NM_TELEFONE_ALU', $aluno['NM_TELEFONE_ALU'], ['class' => 'form-control']) !!}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="numero" class="control-label">Cidade:</label>
+                            {!! Form::text('ST_CIDADE_ALU', null, ['class' => 'form-control', 'id' => 'campoCidade']) !!}
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="numero" class="control-label">Estado:</label>
+                            {!! Form::text('ST_UF_ALU', null, ['class' => 'form-control', 'id' => 'campoEstado']) !!}
                         </div>
                     </div>
                     
