@@ -64,8 +64,8 @@ $(document).ready(function(){
             dataType: "json",
             success:function(data){
                 swal("Sucesso!", "Teste.", "success");
-                console.log(data);
-                location.reload();
+//                console.log(data);
+//                location.reload();
             }, error: function(){
                 swal("Erro!", "Teste.", "error");
             }
