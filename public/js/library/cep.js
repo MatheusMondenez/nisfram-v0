@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    alert('uhu');
+
     var campoCEP = $('#campoCep');
 //    var campoCEP = $('input[type=text][name=NM_CEP_ALU]');
     campoCEP.blur(function(){

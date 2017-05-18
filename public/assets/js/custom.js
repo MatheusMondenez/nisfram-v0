@@ -1,5 +1,11 @@
 $(document).ready(function(){
     
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        }
+    });
+    
 //    var botoes = $('.esconder-acao');
 //    botoes.hide();
 //    var linha = $('tr');
@@ -10,11 +16,12 @@ $(document).ready(function(){
 //        botoes.hide();
 //    });
 
-    var btnExcluir = $('#btnExcluirAluno');
+    var btnExcluir = $('.delete-aluno');
     btnExcluir.click(function(event){
         event.preventDefault();
         var token = $(this).data("token");
         var id = $(this).data("id");
+        var tr = $(this).closest("tr");
         swal({
             title: "Deseja continuar?",
             text: "O cadastro do aluno será excluído permanentemente!",
@@ -30,12 +37,13 @@ $(document).ready(function(){
                 type: "DELETE",
                 data: {
 //                    _method: 'delete',
-                    _token: token
+//                    _token: token // Não precisa passar o token se setar ele no meta e fazer setup aqui
 //                    ID_ALUNO_ALU: id
                 },
                 dataType: "json",
                 success:function(){
                     swal("Excluído!", "O aluno foi removido com sucesso.", "success");
+                    tr.fadeOut(1000);
                 }, error: function(){
                     swal("Erro!", "Não foi possível remover o aluno.", "error");
                 }
@@ -43,27 +51,24 @@ $(document).ready(function(){
         });
     });
     
-    var btnSalvar = $('#btnSalvarAluno');
-    btnSalvar.click(function(event){
-//        $.ajaxSetup({
-//            header: $('meta[name="_token"]').attr('content')
-//        });
+    $('#formSalvarAluno').submit(function(event){
         event.preventDefault();
-        var token = $(this).data("token");
         $.ajax({
             url: "alunos",
             type: "POST",
-            data: {
-                _token: token,
-                ST_NOME_ALU: "TESTE AJAX",
-                NM_NIS_ALU: 4
-            },
+//            data: {
+//                ST_NOME_ALU: "Teste AJAX",
+//                NM_NIS_ALU: "100"
+//            },
+            data: $(this).serialize(),
             dataType: "json",
-            success:function(){
-                    swal("Cadastado!", "O aluno foi cadastrado com sucesso.", "success");
-                }, error: function(){
-                    swal("Erro!", "Não foi possível cadastrar o aluno.", "error");
-                }
+            success:function(data){
+                swal("Sucesso!", "Teste.", "success");
+                console.log(data);
+                location.reload();
+            }, error: function(){
+                swal("Erro!", "Teste.", "error");
+            }
         });
     });
 

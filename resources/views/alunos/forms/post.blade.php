@@ -7,7 +7,7 @@
                 </div>
                 <div class="modal-body">
 
-                {!! Form::open(['route' => 'alunos.store', 'class' => 'form']) !!}
+                {!! Form::open(['route' => 'alunos.store', 'class' => 'form', 'id' => 'formSalvarAluno']) !!}
 
                     <div class="row">
                         <div class="form-group col-md-12">

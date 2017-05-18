@@ -53,6 +53,22 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
+        /*
+         * AJAX
+         */
+        
+//        if($request->ajax()){
+//            
+//            $aluno = new Aluno();
+//            $aluno->create($request->all());
+//            
+//            return response(['msg' => 'success']);
+//        }
+        
+        /*
+         * AJAX
+         */
+        
         $params = $request->all();
         
         $params['DT_NASCIMENTO_ALU'] = date('Y-m-d', strtotime($params['DT_NASCIMENTO_ALU']));
@@ -60,13 +76,7 @@ class AlunosController extends Controller
         $aluno = new Aluno();
         $result = $aluno->create($params);
         
-        return response()->json(['responseText' => 'Sucesso!'], 200);
-        
-//        if($result)
-////            return 'Sucesso';
-//            return redirect()->back();
-//        else
-//            return 'Falha';
+        return response()->json(['response' => 'success'], 200);
     }
 
     /**

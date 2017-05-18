@@ -4,7 +4,7 @@
         
         <title>{{$title or 'NISFRAM'}} :: NISFRAM</title>
         
-        <!--<meta name="_token" content="{{ csrf_token() }}" />-->
+        <meta name="_token" content="{{ csrf_token() }}" />
         
         <script src="{{url('assets/js/jquery-3.2.1.min.js')}}"></script>      
         <script src="{{url('assets/bootstrap/js/bootstrap.min.js')}}"></script>      

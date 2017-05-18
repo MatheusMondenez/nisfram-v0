@@ -187,7 +187,7 @@
                                         <!--{!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs esconder-acao']) !!}-->
                                     <!--{!! Form::close() !!}-->
                                     <a class="btn btn-primary btn-xs acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}"><i class="fa fa-edit"></i> Editar</a>
-                                    <a class="btn btn-danger btn-xs acao" id="btnExcluirAluno" data-token="{{csrf_token()}}" data-id="{{$aluno['ID_ALUNO_ALU']}}"><i class="fa fa-times"></i> Excluir</a>
+                                    <a class="btn btn-danger btn-xs acao delete-aluno" data-token="{{csrf_token()}}" data-id="{{$aluno['ID_ALUNO_ALU']}}"><i class="fa fa-times"></i> Excluir</a>
                                 </td>
                             </tr>
                         @endforeach
