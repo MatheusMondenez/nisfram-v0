@@ -51,7 +51,7 @@ $(document).ready(function(){
         });
     });
     
-    $('#formSalvarAluno').submit(function(event){
+    $('#formStoreAluno').submit(function(event){
         event.preventDefault();
         $.ajax({
             url: "alunos",

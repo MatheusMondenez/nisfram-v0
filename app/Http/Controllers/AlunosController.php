@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Aluno;
+use Illuminate\Support\Facades\Response;
 
 class AlunosController extends Controller
 {
@@ -32,7 +33,7 @@ class AlunosController extends Controller
         }
 
 //        return view('alunos.index', ['teste' => $teste]);
-        return view('alunos.index', compact('title', 'teste', 'alunos'));
+        return view('pages.alunos.index', compact('title', 'teste', 'alunos'));
     }
 
     /**
@@ -98,7 +99,30 @@ class AlunosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $request = new Request();
+        $aluno = new Aluno();
+        $aluno = $aluno->find($id);
+        
+        if($request->ajax()){
+            
+            $response = [
+                'ID_ALUNO_ALU' => $aluno->ID_ALUNO_ALU, 
+                'NM_NIS_ALU' => $aluno->NM_NIS_ALU, 
+                'ST_NOME_ALU' => $aluno->ST_NOME_ALU,
+                'ST_RESPONSAVEL_ALU' => $aluno->ST_RESPONSAVEL_ALU,
+                'DT_NASCIMENTO_ALU' => $aluno->DT_NASCIMENTO_ALU,
+                'ST_ENDERECO_ALU' => $aluno->ST_ENDERECO_ALU,
+                'NM_ENDERECO_ALU' => $aluno->NM_ENDERECO_ALU,
+                'ST_BAIRRO_ALU' => $aluno->ST_BAIRRO_ALU,
+                'NM_TELEFONE_ALU' => $aluno->NM_TELEFONE_ALU,
+                'FL_STATUS_ALU' => $aluno->FL_STATUS_ALU,
+                'FL_IMAGEM_ALU' => $aluno->FL_IMAGEM_ALU,
+                'FL_SAIDA_ALU' => $aluno->FL_SAIDA_ALU,
+                'FL_IRMAO_ALU' => $aluno->FL_IRMAO_ALU
+            ];
+            
+            return Response::json($response);            
+        }
     }
 
     /**

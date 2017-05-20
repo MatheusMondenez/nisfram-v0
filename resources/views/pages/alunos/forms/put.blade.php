@@ -97,7 +97,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+                    {!! Form::submit('Salvar', ['class' => 'btn btn-primary', 'id' => 'formEditarAluno'.$aluno['ID_ALUNO_ALU']]) !!}
                 {!! Form::close() !!}
                 </div>
             </div>

@@ -182,12 +182,12 @@
                                 <td>{{$aluno['ST_NOME_ALU']}}</td>
                                 <td class="text-right">{{$aluno['IDADE']}}</td>
                                 <td class="text-center">
-                                    <!--{!! Form::open(['route' => ['alunos.destroy', $aluno['ID_ALUNO_ALU']], 'method' => 'delete', 'class' => 'form']) !!}-->
-                                        <!--<button type="button" class="btn btn-warning btn-xs esconder-acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}">Editar</button>-->
-                                        <!--{!! Form::submit('Excluir', ['class' => 'btn btn-danger btn-xs esconder-acao']) !!}-->
-                                    <!--{!! Form::close() !!}-->
-                                    <a class="btn btn-primary btn-xs acao" data-toggle="modal" data-target="#modalAluno{{$aluno['ID_ALUNO_ALU']}}"><i class="fa fa-edit"></i> Editar</a>
-                                    <a class="btn btn-danger btn-xs acao delete-aluno" data-token="{{csrf_token()}}" data-id="{{$aluno['ID_ALUNO_ALU']}}"><i class="fa fa-times"></i> Excluir</a>
+                                    {!! Form::open(['method' => 'POST', 'action' => ['AlunosController@edit', $aluno['ID_ALUNO_ALU'], 'class' => 'form']]) !!}
+                                    
+                                        {!! Form::hidden('ID_ALUNO_ALU', $aluno['ID_ALUNO_ALU']) !!}
+                                        {!! Form::submit('Editar', ['class' => 'btn btn-primary btn-xs', 'id' => 'btnEditAluno']) !!}
+                                    
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
@@ -241,8 +241,8 @@
     <!-- /.row  -->
     
     <!-- Modal -->
-    @include('alunos.forms.post')
-    @include('alunos.forms.put')
+    @include('modals.alunos.post')
+    {{--@include('modals.alunos.put')--}}
 
 @endsection
 
