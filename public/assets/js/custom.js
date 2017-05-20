@@ -81,4 +81,51 @@ $(document).ready(function(){
 //            "infoFiltered": "(Filtrado de _MAX_ registros totais)"
 //        }
 //    });
+
+    $('.editAluno').click(function(event){
+        event.preventDefault();
+        var id = ($(this).data("id"));
+        $.ajax({
+            url: "alunos/"+id+"/edit",
+            type: "GET",
+            dataType: "json",
+            success:function(data){
+                $('input[name=ST_NOME_ALU]').val(data.ST_NOME_ALU);
+                $('input[name=ST_RESPONSAVEL_ALU]').val(data.ST_RESPONSAVEL_ALU);
+                $('input[name=NM_NIS_ALU]').val(data.NM_NIS_ALU);
+                $('input[name=DT_NASCIMENTO_ALU]').val(data.DT_NASCIMENTO_ALU);
+                $('input[name=FL_SEXO_ALU]').val(data.FL_SEXO_ALU);
+                $('input[name=NM_CEP_ALU]').val(data.NM_CEP_ALU);
+                $('input[name=ST_ENDERECO_ALU]').val(data.ST_ENDERECO_ALU);
+                $('input[name=NM_ENDERECO_ALU]').val(data.NM_ENDERECO_ALU);
+                $('input[name=ST_BAIRRO_ALU]').val(data.ST_BAIRRO_ALU);
+                $('input[name=NM_TELEFONE_ALU]').val(data.NM_TELEFONE_ALU);
+                $('input[name=ST_CIDADE_ALU]').val(data.ST_CIDADE_ALU);
+                $('input[name=ST_UF_ALU]').val(data.ST_UF_ALU);
+                $('input[name=FL_STATUS_ALU]').val(data.FL_STATUS_ALU);
+                $('input[name=FL_IMAGEM_ALU]').val(data.FL_IMAGEM_ALU);
+                $('input[name=FL_SAIDA_ALU]').val(data.FL_SAIDA_ALU);
+                console.log(data);
+            }, error: function(){
+                console.log('erro do id: ' + id);
+            }
+        });
+    });
+    
+    $('#formUpdateAluno').submit(function(event){
+        event.preventDefault();
+        $.ajax({
+            url: "alunos/42",
+            type: "PUT",
+            data: $(this).serialize(),
+            dataType: "json",
+            success:function(data){
+                swal("Sucesso!", "Teste.", "success");
+//                console.log(data);
+//                location.reload();
+            }, error: function(){
+                swal("Erro!", "Teste.", "error");
+            }
+        });
+    });
  });

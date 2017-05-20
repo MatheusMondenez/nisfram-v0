@@ -182,12 +182,7 @@
                                 <td>{{$aluno['ST_NOME_ALU']}}</td>
                                 <td class="text-right">{{$aluno['IDADE']}}</td>
                                 <td class="text-center">
-                                    {!! Form::open(['method' => 'POST', 'action' => ['AlunosController@edit', $aluno['ID_ALUNO_ALU'], 'class' => 'form']]) !!}
-                                    
-                                        {!! Form::hidden('ID_ALUNO_ALU', $aluno['ID_ALUNO_ALU']) !!}
-                                        {!! Form::submit('Editar', ['class' => 'btn btn-primary btn-xs', 'id' => 'btnEditAluno']) !!}
-                                    
-                                    {!! Form::close() !!}
+                                    <a class="btn btn-primary btn-xs editAluno" data-toggle="modal" data-target="#modalUpdateAluno" data-id="{{$aluno->ID_ALUNO_ALU}}"><i class="fa fa-edit"></i> Editar</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -242,7 +237,7 @@
     
     <!-- Modal -->
     @include('modals.alunos.post')
-    {{--@include('modals.alunos.put')--}}
+    @include('modals.alunos.put')
 
 @endsection
 
