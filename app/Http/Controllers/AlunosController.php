@@ -16,8 +16,8 @@ class AlunosController extends Controller
     {
         $title = 'Alunos';
         $teste = 'Alunos';
-//        $alunos = $aluno->all();
-        $alunos = $aluno->paginate(50);
+        $alunos = $aluno->all();
+//        $alunos = $aluno->paginate(50);
         
         $totalAlunos = count($alunos);
         
@@ -32,7 +32,7 @@ class AlunosController extends Controller
         }
 
 //        return view('alunos.index', ['teste' => $teste]);
-        return view('alunos.index', compact('title', 'teste', 'alunos'));
+        return view('pages.alunos.index', compact('title', 'teste', 'alunos'));
     }
 
     /**
@@ -53,6 +53,22 @@ class AlunosController extends Controller
      */
     public function store(Request $request)
     {
+        /*
+         * AJAX
+         */
+        
+//        if($request->ajax()){
+//            
+//            $aluno = new Aluno();
+//            $aluno->create($request->all());
+//            
+//            return response(['msg' => 'success']);
+//        }
+        
+        /*
+         * AJAX
+         */
+        
         $params = $request->all();
         
         $params['DT_NASCIMENTO_ALU'] = date('Y-m-d', strtotime($params['DT_NASCIMENTO_ALU']));
@@ -60,10 +76,7 @@ class AlunosController extends Controller
         $aluno = new Aluno();
         $result = $aluno->create($params);
         
-        if($result)
-            return 'Sucesso';
-        else
-            return 'Falha';
+        return response()->json(['response' => 'success'], 200);
     }
 
     /**
@@ -105,7 +118,7 @@ class AlunosController extends Controller
         $result = $aluno->find($id)->update($params);
         
         if($result)
-            return 'Sucesso';
+            return redirect()->back();
         else
             return 'Falha';
     }
@@ -122,10 +135,17 @@ class AlunosController extends Controller
 
         $result = $aluno->find($id)->delete();
         
-        if($result)
-            return 'Sucesso';
-        else
-            return 'Falha';
+        if($result){
+            return response(['success' => true]);
+        }
+        
+//        if(request()->expectsJson())
+//            return $result->toJson();
+        
+//        if($result)
+//            return response()->json(['success', true]);
+//        else
+//            return response()->json(['error', true]);
     }
     
     private function calcularIdade($dataNasc)

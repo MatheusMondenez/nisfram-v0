@@ -127,8 +127,8 @@
     </div>
     <!-- /.row  -->
     <!-- Modal -->
-    @include('professores.forms.post')
-    @include('professores.forms.put')
+    @include('modals.professores.post')
+    @include('modals.professores.put')
     
 
 @endsection

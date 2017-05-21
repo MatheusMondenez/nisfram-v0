@@ -18,7 +18,7 @@ class ProfessoresController extends Controller
         $professor = new Professor();
         $professores = $professor->paginate(50);
         
-        return view('professores.index', compact('title', 'professores'));
+        return view('pages.professores.index', compact('title', 'professores'));
     }
 
     /**
@@ -45,7 +45,7 @@ class ProfessoresController extends Controller
         $result = $professor->create($params);
         
         if($result)
-            return 'Sucesso';
+            return redirect()->back();
         else
             return 'Falha';
     }
@@ -87,7 +87,7 @@ class ProfessoresController extends Controller
         $result = $professor->find($id)->update($params);
         
         if($result)
-            return 'Sucesso';
+            return redirect()->back();
         else
             return 'Falha';
     }
@@ -105,7 +105,7 @@ class ProfessoresController extends Controller
         $result = $professor->find($id)->delete();
         
         if($result)
-            return 'Sucesso';
+            return redirect()->back();
         else
             return 'Falha';
     }
