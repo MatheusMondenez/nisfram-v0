@@ -32,7 +32,7 @@ class AlunosController extends Controller
         }
 
 //        return view('alunos.index', ['teste' => $teste]);
-        return view('pages.alunos.index', compact('title', 'teste', 'alunos'));
+        return view('alunos.index', compact('title', 'teste', 'alunos'));
     }
 
     /**
