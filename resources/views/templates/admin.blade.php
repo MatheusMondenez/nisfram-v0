@@ -4,14 +4,6 @@
         
         <title>{{$title or 'NISFRAM'}} :: NISFRAM</title>
         
-        <!-- Morris Charts JavaScript -->
-        <script src="{{url('assets/sb-admin/js/plugins/morris/raphael.min.js')}}"></script>
-        <script src="{{url('assets/sb-admin/js/plugins/morris/morris.min.js')}}"></script>
-        <script src="{{url('assets/sb-admin/js/plugins/morris/morris-data.js')}}"></script>
-
-        <!-- Morris Charts CSS -->
-        <link href="{{url('assets/sb-admin/css/plugins/morris.css')}}" rel="stylesheet">
-
         <meta name="_token" content="{{ csrf_token() }}" />
         
         <script src="{{url('assets/js/jquery-3.2.1.min.js')}}"></script>      
@@ -29,7 +21,7 @@
         <link rel="stylesheet" href="{{url('assets/sweet-alert/sweetalert.css')}}">
         <!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">-->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css">
-
+        
     </head>
     <body> 
         
@@ -51,26 +43,5 @@
 
     </div>
     <!-- /#wrapper -->
-    
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-    
-    <script>
-    
-        $(function() {
-            $( "#datepicker" ).datepicker();
-        });
-    
-    </script>
-    
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-    <script>
-
-        toastr.info('Bem vindo de volta Matheus');
-
-    </script>
-
-    
     </body>
 </html>
