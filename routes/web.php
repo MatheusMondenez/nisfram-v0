@@ -29,3 +29,4 @@ Route::group([/*'middleware' => 'auth'*/], function(){
 Route::resource('/alunos', 'AlunosController');
 
 Route::resource('/professores', 'ProfessoresController');
+Route::resource('/turmas', 'TurmasController');
